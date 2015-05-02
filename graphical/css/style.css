@@ -1,0 +1,18 @@
+body {
+	width: 370px !important;
+}
+
+.horizontalList {
+	height: 50px !important;
+	margin-left: 48px !important;
+}
+
+.verticalList {
+	width: 50px !important;
+	float: left !important;
+}
+
+.board {
+	float: right !important;
+	/*display: block !important;*/
+}

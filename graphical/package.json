@@ -1,0 +1,11 @@
+{
+  "name": "Hlutbundin",
+  "version": "0.0.1",
+  "description": "graphical representation",
+  "dependencies": {
+    "d3": "^3.5.1",
+    "express": "^4.10.4",
+    "path": "^0.11.14",
+    "socket.io": "^1.2.1"
+  }
+}
