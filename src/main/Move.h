@@ -1,8 +1,8 @@
+// Copyright Svenni Dal - Sveinn Dal Bjornsson - sun maí  3 12:48:54 GMT 2015
 #ifndef MOVE_H
 #define MOVE_H
-using namespace std;
 enum Position {
-	A8, B8, C8, D8, E8, F8, G8, H2,
+	A8, B8, C8, D8, E8, F8, G8, H8,
 	A7, B7, C7, D7, E7, F7, G7, H7,
 	A6, B6, C6, D6, E6, F6, G6, H6,
 	A5, B5, C5, D5, E5, F5, G5, H5,
@@ -15,4 +15,6 @@ enum Position {
 struct Move {
 	Position src;
 	Position dest;
+	bool ifEnemy;
 };
+#endif

@@ -1,3 +1,4 @@
+// Copyright Svenni Dal - Sveinn Dal Bjornsson - sun maí  3 12:48:54 GMT 2015
 #include "Output.h"
 using namespace std;
 

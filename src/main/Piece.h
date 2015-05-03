@@ -1,17 +1,27 @@
+// Copyright Svenni Dal - Sveinn Dal Bjornsson - sun maí  3 12:48:54 GMT 2015
 #ifndef PIECE_H
 #define PIECE_H
 #include "Move.h"
+// bunch of includes for debuggin
 #include <string>
+#include <iostream>
 #include <vector>
 using namespace std;
+
+enum Type { KING, QUEEN, ROOK, BISHOP, KNIGHT, POWN };
 
 enum Color { WHITE, BLACK };
 
 class Piece {
 	public:
-		virtual Piece(Color c): _c(c);
-		virtual vector<Move> legalMoves(Position pos);
+		Piece(Color c): _color(c){}
+		virtual ~Piece(){};
+		virtual vector<Move> legalMoves(Position pos)=0;
 	protected:
-		Color _c;
-}
+		Piece& operator =(const Piece& rhs);
+		Piece(const Piece& rhs); 
+
+		Color _color;
+};
+typedef Piece* PiecePtr;
 #endif
