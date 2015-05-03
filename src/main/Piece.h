@@ -8,7 +8,7 @@
 #include <vector>
 using namespace std;
 
-enum Type { KING, QUEEN, ROOK, BISHOP, KNIGHT, POWN };
+enum Type { NONE, KING, QUEEN, ROOK, BISHOP, KNIGHT, POWN };
 
 enum Color { WHITE, BLACK };
 
@@ -17,6 +17,7 @@ class Piece {
 		Piece(Color c): _color(c){}
 		virtual ~Piece(){};
 		virtual vector<Move> legalMoves(Position pos)=0;
+		Color getColor() const{ return _color; }
 	protected:
 		Piece& operator =(const Piece& rhs);
 		Piece(const Piece& rhs); 

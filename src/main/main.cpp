@@ -2,6 +2,7 @@
 #include "Pown.h"
 #include "Square.h"
 #include "Board.h"
+#include <typeinfo>
 #include <iostream>
 #include <cstdlib>
 #include <string>
@@ -33,6 +34,37 @@ int main()
 	//delete pw;
 	//delete pb;
 	Board theBoard;;
+
+
+	cout << "KING: " << KING << endl;
+	cout << "pw->getColor(): " << pw->getColor() << endl;
+	cout << "pb->getColor(): " << pb->getColor() << endl;
+
+	cout << "typeid(*pb).name(): " << typeid(*pb).name() << endl;
+	cout << "typeid(*pw).name(): " << typeid(*pw).name() << endl;
+	if(typeid(*pw) == typeid(Pown)){
+		cout << "typeid(*pw) == typeid(Pown)" << endl;
+	} else { cout << "poop\n"; }
+
+
+
+	int bord[64];
+	for(int i = 0; i < 64; i++){
+		bord[i] = 0;
+	}
+	for(int i = 0; i < 64; i++){
+		cout << bord[i] << " ";
+	} cout << endl;
+	theBoard.getBoard(bord);
+	for(int i = 0; i < 64; i++){
+		cout << bord[i] << " ";
+	} cout << endl;
+
+
+
+
+
+
 
 
 

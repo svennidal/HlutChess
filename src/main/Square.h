@@ -2,6 +2,7 @@
 #ifndef SQUARE_H
 #define SQUARE_H
 #include "Piece.h"
+#include <typeinfo>
 using namespace std;
 
 class Square {

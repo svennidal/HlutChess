@@ -16,8 +16,10 @@ class Game {
 	private:
 		Game(const Game& rhs);
 		Game& operator =(const Game& rhs);
+
 		void terminalOut();
 		void internetOut();
 		void Move(Move& move);
+		int _board[BOARD_SIZE];
 };
 #endif

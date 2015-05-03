@@ -4,6 +4,11 @@
 #include "Square.h"
 #include "Piece.h"
 #include "Pown.h"
+#include "King.h"
+#include "Queen.h"
+#include "Rook.h"
+#include "Bishop.h"
+#include "Knight.h"
 #include <vector>
 #include <string>
 #include <iostream>
@@ -15,17 +20,17 @@ class Board {
 	public:
 		Board();
 		~Board();
-		string Move(Square& src, Square& dest);
-		void getBoard(int& board);
+		string movePiece(Move move);
+		void getBoard(int boobs[]);
 	private:
 		Board(const Board& rhs);
 		Board& operator =(const Board& rhs);
 
 		//SquarePtr _squares[BOARD_SIZE];
 		Square _squares[BOARD_SIZE];
-		int _board[BOARD_SIZE];
+		void init();
 		void reset();
-		bool isLegalMove(Position src, Position dest) const;
+		bool isLegalMove(Move move) const;
 		void update();
 		string checkMove(Position src, Position dest) const;
 };
