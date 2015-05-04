@@ -19,12 +19,21 @@ Knight::~Knight()
 	//TODO
 }
 
+/*
 vector<Move> Knight::legalMoves(Position pos)
 {
 	//TODO
 	vector<Move> tmp;
 	return tmp;
 }
+*/
+
+bool Knight::legalMove(Move move)
+{
+	//TODO
+	return false;
+}
+
 
 Type Knight::getType()
 {

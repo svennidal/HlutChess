@@ -19,11 +19,19 @@ Rook::~Rook()
 	//TODO
 }
 
+/*
 vector<Move> Rook::legalMoves(Position pos)
 {
 	//TODO
 	vector<Move> tmp;
 	return tmp;
+}
+*/
+
+bool Rook::legalMove(Move move)
+{
+	//TODO
+	return false;
 }
 
 Type Rook::getType()

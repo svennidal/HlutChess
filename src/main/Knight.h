@@ -8,7 +8,8 @@ class Knight: public Piece {
 	public:
 		Knight(Type t, Color c);
 		virtual ~Knight();
-		virtual vector<Move> legalMoves(Position pos);
+		//virtual vector<Move> legalMoves(Position pos);
+		virtual bool legalMove(Move move);
 		virtual Type getType();
 	private:
 		Knight(const Knight& rhs);

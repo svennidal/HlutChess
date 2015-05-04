@@ -8,7 +8,8 @@ class Queen: public Piece {
 	public:
 		Queen(Type t, Color c);
 		virtual ~Queen();
-		virtual vector<Move> legalMoves(Position pos);
+		//virtual vector<Move> legalMoves(Position pos);
+		virtual bool legalMove(Move move);
 		virtual Type getType();
 	private:
 		Queen(const Queen& rhs);

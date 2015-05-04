@@ -16,7 +16,8 @@ class Piece {
 	public:
 		Piece(Color c): _color(c){}
 		virtual ~Piece(){};
-		virtual vector<Move> legalMoves(Position pos)=0;
+		//virtual vector<Move> legalMoves(Position pos)=0;
+		virtual bool legalMove(Move move)=0;
 		Color getColor() const{ return _color; }
 		virtual Type getType()=0;
 	protected:

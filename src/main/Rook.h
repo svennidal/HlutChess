@@ -8,7 +8,8 @@ class Rook: public Piece {
 	public:
 		Rook(Type t, Color c);
 		virtual ~Rook();
-		virtual vector<Move> legalMoves(Position pos);
+		//virtual vector<Move> legalMoves(Position pos);
+		virtual bool legalMove(Move move);
 		virtual Type getType();
 	private:
 		Rook(const Rook& rhs);

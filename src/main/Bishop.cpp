@@ -19,11 +19,19 @@ Bishop::~Bishop()
 	//TODO
 }
 
+/*
 vector<Move> Bishop::legalMoves(Position pos)
 {
 	//TODO
 	vector<Move> tmp;
 	return tmp;
+}
+*/
+
+bool Bishop::legalMove(Move move)
+{
+	//TODO
+	return false;
 }
 
 Type Bishop::getType()

@@ -64,12 +64,13 @@ int main()
 	} cout << endl;
 
 
+	/*
 	Output output("http://www.reykjavik.university:3717/data/");
 	output.sendToServer(bord);
+	*/
 
 
 
-	/*
 	Output output("http://www.reykjavik.university:3717/data/");
 	string tits;
 	while(cin >> tits && tits != "exit"){
@@ -80,7 +81,6 @@ int main()
 		output.sendToServer(board);
 		output.sendToCmdLine(board);
 	}
-	*/
 
 	return 0;
 }
