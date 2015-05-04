@@ -11,7 +11,8 @@ class Square {
 		~Square();
 		
 		void putPiece(PiecePtr& piece);
-		PiecePtr& getPiece();
+		PiecePtr getPiece();
+		Type getType();
 		void killPiece();
 	
 	private:

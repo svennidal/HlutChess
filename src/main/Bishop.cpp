@@ -1,7 +1,7 @@
 #include "Bishop.h"
 using namespace std;
 
-Bishop::Bishop(Color c): Piece(c)
+Bishop::Bishop(Type t, Color c): Piece(c), _type(t)
 {
 	if(_color == WHITE){
 		cout << "hello from white Bishop constructor\n";
@@ -24,4 +24,9 @@ vector<Move> Bishop::legalMoves(Position pos)
 	//TODO
 	vector<Move> tmp;
 	return tmp;
+}
+
+Type Bishop::getType()
+{
+	return _type;
 }

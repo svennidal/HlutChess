@@ -18,6 +18,7 @@ class Piece {
 		virtual ~Piece(){};
 		virtual vector<Move> legalMoves(Position pos)=0;
 		Color getColor() const{ return _color; }
+		virtual Type getType()=0;
 	protected:
 		Piece& operator =(const Piece& rhs);
 		Piece(const Piece& rhs); 

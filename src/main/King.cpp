@@ -1,7 +1,7 @@
 #include "King.h"
 using namespace std;
 
-King::King(Color c): Piece(c)
+King::King(Type t, Color c): Piece(c), _type(t)
 {
 	if(_color == WHITE){
 		cout << "hello from white King constructor\n";
@@ -24,4 +24,9 @@ vector<Move> King::legalMoves(Position pos)
 	//TODO
 	vector<Move> tmp;
 	return tmp;
+}
+
+Type King::getType()
+{
+	return _type;
 }

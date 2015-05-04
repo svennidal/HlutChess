@@ -1,7 +1,7 @@
 #include "Pown.h"
 using namespace std;
 
-Pown::Pown(Color c): Piece(c)
+Pown::Pown(Type t, Color c): Piece(c), _type(t)
 {
 	_firstmove = true;
 	if(_color == WHITE){
@@ -34,3 +34,7 @@ void Pown::moved()
 	_firstmove = false;
 }
 
+Type Pown::getType()
+{
+	return _type;
+}

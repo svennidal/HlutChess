@@ -1,7 +1,7 @@
 #include "Knight.h"
 using namespace std;
 
-Knight::Knight(Color c): Piece(c)
+Knight::Knight(Type t, Color c): Piece(c), _type(t)
 {
 	if(_color == WHITE){
 		cout << "hello from white Knight constructor\n";
@@ -24,4 +24,9 @@ vector<Move> Knight::legalMoves(Position pos)
 	//TODO
 	vector<Move> tmp;
 	return tmp;
+}
+
+Type Knight::getType()
+{
+	return _type;
 }

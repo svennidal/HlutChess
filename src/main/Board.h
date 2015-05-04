@@ -1,6 +1,7 @@
 // Copyright Svenni Dal - Sveinn Dal Bjornsson - sun maí  3 12:48:54 GMT 2015
 #ifndef BOARD_H
 #define BOARD_H
+#include "Move.h"
 #include "Square.h"
 #include "Piece.h"
 #include "Pown.h"

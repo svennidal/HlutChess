@@ -1,7 +1,7 @@
 #include "Queen.h"
 using namespace std;
 
-Queen::Queen(Color c): Piece(c)
+Queen::Queen(Type t, Color c): Piece(c), _type(t)
 {
 	if(_color == WHITE){
 		cout << "hello from white Queen constructor\n";
@@ -24,4 +24,9 @@ vector<Move> Queen::legalMoves(Position pos)
 	//TODO
 	vector<Move> tmp;
 	return tmp;
+}
+
+Type Queen::getType()
+{
+	return _type;
 }

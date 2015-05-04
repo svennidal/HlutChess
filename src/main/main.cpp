@@ -19,8 +19,9 @@ int main()
 
 	Color w = WHITE;
 	Color b = BLACK;
-	PiecePtr pw = new Pown(w);
-	PiecePtr pb = new Pown(b);
+	Type p = POWN;
+	PiecePtr pw = new Pown(p, w);
+	PiecePtr pb = new Pown(p, b);
 
 	Square sq1;
 	Square sq2;
@@ -46,6 +47,7 @@ int main()
 		cout << "typeid(*pw) == typeid(Pown)" << endl;
 	} else { cout << "poop\n"; }
 
+	cout << "sq.getPiece() is of type: " << typeid(*sq1.getPiece()).name() << endl;
 
 
 	int bord[64];
@@ -56,18 +58,18 @@ int main()
 		cout << bord[i] << " ";
 	} cout << endl;
 	theBoard.getBoard(bord);
+
 	for(int i = 0; i < 64; i++){
 		cout << bord[i] << " ";
 	} cout << endl;
 
 
+	Output output("http://www.reykjavik.university:3717/data/");
+	output.sendToServer(bord);
 
 
 
-
-
-
-
+	/*
 	Output output("http://www.reykjavik.university:3717/data/");
 	string tits;
 	while(cin >> tits && tits != "exit"){
@@ -78,5 +80,7 @@ int main()
 		output.sendToServer(board);
 		output.sendToCmdLine(board);
 	}
+	*/
+
 	return 0;
 }

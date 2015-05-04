@@ -6,11 +6,13 @@ using namespace std;
 
 class Knight: public Piece {
 	public:
-		Knight(Color c);
+		Knight(Type t, Color c);
 		virtual ~Knight();
 		virtual vector<Move> legalMoves(Position pos);
+		virtual Type getType();
 	private:
 		Knight(const Knight& rhs);
 		Knight& operator =(const Knight& rhs);
+		Type _type;
 };
 #endif

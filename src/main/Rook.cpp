@@ -1,7 +1,7 @@
 #include "Rook.h"
 using namespace std;
 
-Rook::Rook(Color c): Piece(c)
+Rook::Rook(Type t, Color c): Piece(c), _type(t)
 {
 	if(_color == WHITE){
 		cout << "hello from white Rook constructor\n";
@@ -24,4 +24,9 @@ vector<Move> Rook::legalMoves(Position pos)
 	//TODO
 	vector<Move> tmp;
 	return tmp;
+}
+
+Type Rook::getType()
+{
+	return _type;
 }

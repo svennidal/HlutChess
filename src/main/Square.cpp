@@ -14,9 +14,14 @@ void Square::putPiece(PiecePtr& piece)
 	this->_piece = piece;
 }
 
-PiecePtr& Square::getPiece()
+PiecePtr Square::getPiece()
 {
 	return this->_piece;
+}
+
+Type Square::getType()
+{
+	return this->_piece->getType();
 }
 
 void Square::killPiece()
