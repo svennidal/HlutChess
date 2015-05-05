@@ -14,11 +14,51 @@ Board::~Board()
 	// Square takes care of PiecePtr.
 }
 
-string Board::movePiece(Move move)
+void Board::movePiece(Position pos)
 {
-	//TODO
-	string tmp;
-	return tmp;
+	if(_squares[pos].getType() == NONE){
+		cout << "NO PIECE SELECTED!\n";
+	}
+	else {
+		vector<Move> legalMoves = _squares[pos].getPiece()->legalMoves(pos);
+		vector<Move> killMoves = _squares[pos].getPiece()->killMoves(pos);
+		vector<Move> allMoves;
+
+		if(legalMoves.size() > 0){
+			for(size_t i = 0; i < legalMoves.size(); i++){
+				if(_squares[legalMoves[i].dest].getPiece() == NULL){
+					allMoves.push_back(legalMoves[i]);
+				}
+			}
+		}
+		if(killMoves.size() > 0){
+			for(size_t i = 0; i < killMoves.size(); i++){
+				if( (_squares[killMoves[i].dest].getColor() != NO) &&
+						(_squares[killMoves[i].src].getColor() != _squares[killMoves[i].dest].getColor())
+				  ){
+					allMoves.push_back(killMoves[i]);
+				}
+			}
+		}
+		if(allMoves.size() > 0){
+			srand(time(NULL));
+			int index = rand() % allMoves.size();
+			makeMove(allMoves[index]);
+		}
+		else {
+			cout << "NO POSSIBLE MOVES FOR THIS PIECE!\n";
+		}
+	}
+}
+
+void Board::makeMove(Move move)
+{
+	PiecePtr tmp = _squares[move.src].getPiece();
+	if(tmp->getType() == POWN){
+		tmp->moved();
+	}
+	_squares[move.dest].putPiece(tmp);
+	_squares[move.src].gonePiece();
 }
 
 void Board::getBoard(int boobs[])
@@ -36,7 +76,7 @@ void Board::getBoard(int boobs[])
 				if(_squares[i].getPiece()->getColor() == WHITE){
 					boobs[i] = 2;
 				} else {
-					boobs[i] = 2;
+					boobs[i] = 8;
 				}
 			}
 			else if(_squares[i].getPiece()->getType() == ROOK){
@@ -77,25 +117,10 @@ void Board::getBoard(int boobs[])
 
 void Board::reset()
 {
+	for(int i = 0; i < BOARD_SIZE; i++){
+		_squares[i].killPiece();
+	}
 	init();
-}
-
-bool Board::isLegalMove(Move move) const
-{
-	//TODO
-	return false;
-}
-
-void Board::update()
-{
-	//TODO
-}
-
-string Board::checkMove(Position src, Position dest) const
-{
-	//TODO
-	string tmp;
-	return tmp;
 }
 
 void Board::init()

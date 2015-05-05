@@ -29,7 +29,6 @@ void Output::sendToServer(const int board[]) const
 
 	string data = _curlString + postString;
 	//char *_cstr = new char[data.length() + 1];
-	cout << "data.length(): " << data.length() << endl;
 	strcpy(_cstr, data.c_str());
 
 	system(_cstr);
@@ -37,7 +36,25 @@ void Output::sendToServer(const int board[]) const
 
 void Output::sendToCmdLine(const int board[]) const
 {
+	int count(8);
+	cout << "--------------------\n" << count << "| ";
+	count--;
 	for(int i = 0; i < 64; i++){
-		cout << board[i] << " ";
-	} cout << endl;
+		if(i % 8 == 0 && i != 0){ cout << "|\n" <<  count << "| "; count--; }
+		if(board[i] == 0){ cout << "  "; }
+		else if(board[i] == 1){ cout << "K "; }
+		else if(board[i] == 2){ cout << "Q "; }
+		else if(board[i] == 3){ cout << "R "; }
+		else if(board[i] == 4){ cout << "B "; }
+		else if(board[i] == 5){ cout << "N "; }
+		else if(board[i] == 6){ cout << "P "; }
+		else if(board[i] == 7){ cout << "k "; }
+		else if(board[i] == 8){ cout << "q "; }
+		else if(board[i] == 9){ cout << "r "; }
+		else if(board[i] == 10){ cout << "b "; }
+		else if(board[i] == 11){ cout << "n "; }
+		else if(board[i] == 12){ cout << "p "; }
+	}
+	cout << "|\n--------------------\n";
+	cout << "   a b c d e f g h\n";
 }

@@ -9,6 +9,7 @@ class King: public Piece {
 		King(Type t, Color c);
 		virtual ~King();
 		virtual vector<Move> legalMoves(Position pos);
+		virtual vector<Move> killMoves(Position pos);
 		virtual Type getType();
 	private:
 		King(const King& rhs);

@@ -13,6 +13,7 @@
 #include <vector>
 #include <string>
 #include <iostream>
+#include <cstdlib>
 using namespace std;
 
 const int BOARD_SIZE = 64;
@@ -21,18 +22,15 @@ class Board {
 	public:
 		Board();
 		~Board();
-		string movePiece(Move move);
+		void movePiece(Position pos);
 		void getBoard(int boobs[]);
+		void reset();
 	private:
 		Board(const Board& rhs);
 		Board& operator =(const Board& rhs);
 
-		//SquarePtr _squares[BOARD_SIZE];
 		Square _squares[BOARD_SIZE];
 		void init();
-		void reset();
-		bool isLegalMove(Move move) const;
-		void update();
-		string checkMove(Position src, Position dest) const;
+		void makeMove(Move move);
 };
 #endif

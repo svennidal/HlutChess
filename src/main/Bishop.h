@@ -9,6 +9,7 @@ class Bishop: public Piece {
 		Bishop(Type t, Color c);
 		virtual ~Bishop();
 		virtual vector<Move> legalMoves(Position pos);
+		virtual vector<Move> killMoves(Position pos){ return legalMoves(pos); }
 		virtual Type getType();
 	private:
 		Bishop(const Bishop& rhs);

@@ -10,13 +10,15 @@ using namespace std;
 
 enum Type { NONE, KING, QUEEN, ROOK, BISHOP, KNIGHT, POWN };
 
-enum Color { WHITE, BLACK };
+enum Color { NO, WHITE, BLACK };
 
 class Piece {
 	public:
 		Piece(Color c): _color(c){}
 		virtual ~Piece(){};
 		virtual vector<Move> legalMoves(Position pos)=0;
+		virtual vector<Move> killMoves(Position pos)=0;
+		virtual void moved(){}
 		Color getColor() const{ return _color; }
 		virtual Type getType()=0;
 	protected:

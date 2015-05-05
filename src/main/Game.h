@@ -7,19 +7,23 @@
 #include <iostream>
 using namespace std;
 
+enum OS { NIX, WIN };
+
 class Game {
 	public:
-		Game();
+		Game(OS os = NIX);
 		~Game();
-		void newGame();
-		void waitMove();
+		void play();
 	private:
 		Game(const Game& rhs);
 		Game& operator =(const Game& rhs);
 
 		void terminalOut();
 		void internetOut();
-		void Move(Move& move);
+		Position getPosition(string inp);
 		int _board[BOARD_SIZE];
+		Board _theBoard;
+		Output* _output;
+		OS _os;
 };
 #endif

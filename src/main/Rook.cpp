@@ -3,15 +3,6 @@ using namespace std;
 
 Rook::Rook(Type t, Color c): Piece(c), _type(t)
 {
-	if(_color == WHITE){
-		cout << "hello from white Rook constructor\n";
-	}
-	else if(_color == BLACK){
-		cout << "hello from black Rook constructor\n";
-	}
-	else {
-		cout << "hello from fuckup Rook constructor\n";
-	}
 }
 
 Rook::~Rook()
@@ -21,9 +12,39 @@ Rook::~Rook()
 
 vector<Move> Rook::legalMoves(Position pos)
 {
-	//TODO
-	vector<Move> tmp;
-	return tmp;
+	vector<Move> viktor;
+	int i, j;
+
+	i = pos / 8 + 1; j = pos % 8;
+	for(; i < 8; i++){
+		Move moveit;
+		moveit.src = pos;
+		moveit.dest = posBoard[i][j];
+		viktor.push_back(moveit);
+	}
+	i = pos / 8 - 1; j = pos % 8;
+	for(; i >= 0; i--){
+		Move moveit;
+		moveit.src = pos;
+		moveit.dest = posBoard[i][j];
+		viktor.push_back(moveit);
+	}
+	i = pos / 8; j = pos % 8 + 1;
+	for(; j < 8; j++){
+		Move moveit;
+		moveit.src = pos;
+		moveit.dest = posBoard[i][j];
+		viktor.push_back(moveit);
+	}
+	i = pos / 8; j = pos % 8 - 1;
+	for(; j >= 0; j--){
+		Move moveit;
+		moveit.src = pos;
+		moveit.dest = posBoard[i][j];
+		viktor.push_back(moveit);
+	}
+
+	return viktor;
 }
 
 Type Rook::getType()

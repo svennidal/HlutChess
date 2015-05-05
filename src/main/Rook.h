@@ -9,6 +9,7 @@ class Rook: public Piece {
 		Rook(Type t, Color c);
 		virtual ~Rook();
 		virtual vector<Move> legalMoves(Position pos);
+		virtual vector<Move> killMoves(Position pos){ return legalMoves(pos); }
 		virtual Type getType();
 	private:
 		Rook(const Rook& rhs);

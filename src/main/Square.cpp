@@ -21,11 +21,31 @@ PiecePtr Square::getPiece()
 
 Type Square::getType()
 {
-	return this->_piece->getType();
+	if(this->_piece == NULL){
+		return NONE;
+	} else {
+		return this->_piece->getType();
+	}
+}
+
+Color Square::getColor()
+{
+	if(this->_piece == NULL){
+		return NO;
+	} else {
+		return this->_piece->getColor();
+	}
 }
 
 void Square::killPiece()
 {
-	delete this->_piece;
+	if(this->_piece != NULL){
+		delete this->_piece;
+		this->_piece = NULL;
+	}
+}
+
+void Square::gonePiece()
+{
 	this->_piece = NULL;
 }

@@ -9,6 +9,7 @@ class Knight: public Piece {
 		Knight(Type t, Color c);
 		virtual ~Knight();
 		virtual vector<Move> legalMoves(Position pos);
+		virtual vector<Move> killMoves(Position pos){ return legalMoves(pos); }
 		virtual Type getType();
 	private:
 		Knight(const Knight& rhs);

@@ -3,27 +3,24 @@ using namespace std;
 
 Queen::Queen(Type t, Color c): Piece(c), _type(t)
 {
-	if(_color == WHITE){
-		cout << "hello from white Queen constructor\n";
-	}
-	else if(_color == BLACK){
-		cout << "hello from black Queen constructor\n";
-	}
-	else {
-		cout << "hello from fuckup Queen constructor\n";
-	}
+	_bishop = new Bishop(t, c);
+	_rook = new Rook(t, c);
 }
 
 Queen::~Queen()
 {
-	//TODO
+	delete _bishop;
+	delete _rook;
 }
 
 vector<Move> Queen::legalMoves(Position pos)
 {
-	//TODO
-	vector<Move> tmp;
-	return tmp;
+	vector<Move> bishopViktor;;
+	vector<Move> RookViktor;;
+	bishopViktor = _bishop->legalMoves(pos);
+	RookViktor	= _rook->legalMoves(pos);
+	bishopViktor.insert(bishopViktor.end(), RookViktor.begin(), RookViktor.end());
+	return bishopViktor;
 }
 
 Type Queen::getType()

@@ -13,7 +13,9 @@ class Square {
 		void putPiece(PiecePtr& piece);
 		PiecePtr getPiece();
 		Type getType();
+		Color getColor();
 		void killPiece();
+		void gonePiece();
 	
 	private:
 		Square(const Square& rhs);
