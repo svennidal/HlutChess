@@ -8,8 +8,7 @@ class King: public Piece {
 	public:
 		King(Type t, Color c);
 		virtual ~King();
-		//virtual vector<Move> legalMoves(Position pos);
-		virtual bool legalMove(Move move);
+		virtual vector<Move> legalMoves(Position pos);
 		virtual Type getType();
 	private:
 		King(const King& rhs);

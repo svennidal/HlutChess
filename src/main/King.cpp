@@ -19,19 +19,11 @@ King::~King()
 	//TODO
 }
 
-/*
 vector<Move> King::legalMoves(Position pos)
 {
 	//TODO
 	vector<Move> tmp;
 	return tmp;
-}
-*/
-
-bool King::legalMove(Move move)
-{
-	//TODO
-	return false;
 }
 
 Type King::getType()

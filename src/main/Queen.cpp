@@ -19,19 +19,11 @@ Queen::~Queen()
 	//TODO
 }
 
-/*
 vector<Move> Queen::legalMoves(Position pos)
 {
 	//TODO
 	vector<Move> tmp;
 	return tmp;
-}
-*/
-
-bool Queen::legalMove(Move move)
-{
-	//TODO
-	return false;
 }
 
 Type Queen::getType()

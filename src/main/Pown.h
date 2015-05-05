@@ -7,8 +7,7 @@ class Pown: public Piece {
 	public:
 		Pown(Type t, Color c);
 		virtual ~Pown();
-		//virtual vector<Move> legalMoves(Position pos);
-		virtual bool legalMove(Move move);
+		virtual vector<Move> legalMoves(Position pos);
 		void moved();
 		Type getType();
 	private:

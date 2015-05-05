@@ -20,7 +20,6 @@ Pown::~Pown()
 	//TODO
 }
 
-/*
 vector<Move> Pown::legalMoves(Position pos)
 {
 	//TODO
@@ -28,17 +27,6 @@ vector<Move> Pown::legalMoves(Position pos)
 	}
 	vector<Move> tmp;
 	return tmp;
-}
-*/
-
-bool Pown::legalMove(Move move)
-{
-	//TODO
-	if(true){
-		return false;
-	} else {
-		return false;
-	}
 }
 
 void Pown::moved()
